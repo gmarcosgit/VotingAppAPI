@@ -32,11 +32,43 @@ namespace VotingAppAPI.Controllers
             return students;
         }
 
+
+        [HttpGet]
+        [Route("GetAllCandidates")]
+        public List<Candidates> GetAllCandidates()
+        {
+
+            var candidates = _dataObjects.GetAllCandidates();
+            return candidates;
+        }
+
+        [HttpGet]
+        [Route("GetLoginStudents")]
+        public Students GetLoginStudents(int studentNumber, string Password)
+        {
+            var user = new Students
+            {
+                StudentNumber = studentNumber,
+                Password = Password
+            };
+            var student = _dataObjects.GetLoginStudents(user);
+            return student;
+        }
+        //----------------------------------------------------------------------------------------
         [HttpPost]
         [Route("insertVote")]
         public bool Insert([FromBody] List<VoteData> vote)
         {
             var insert = _postObjects.InsertVotes(vote);
+
+            return insert;
+        }
+
+        [HttpPost]
+        [Route("insertAuditVote")]
+        public bool InsertAuditVote([FromBody] List<AuditTrailVote> vote)
+        {
+            var insert = _postObjects.SubmitVote(vote);
 
             return insert;
         }
@@ -48,15 +80,6 @@ namespace VotingAppAPI.Controllers
         {
             return new string[] { "value1", "value2" };
         }
-
-        [HttpGet]
-        [Route("GetById")]
-        public string GetById()
-        {
-            //var question = _dataObjects.GetQuestionById(id);
-            return "Waley";
-        }
-
 
         //// GET: api/Vote/5
         //public string Get(int id)

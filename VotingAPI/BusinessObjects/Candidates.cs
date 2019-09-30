@@ -7,7 +7,7 @@ namespace VotingAPI.BusinessObjects
 {
     public class Candidates
     {
-        public string StudentNumber { get; set; }
+        public int StudentNumber { get; set; }
 
         public string FullName { get; set; }
 
@@ -26,5 +26,7 @@ namespace VotingAPI.BusinessObjects
         public string Position { get; set; }
 
         public string SchoolYear { get; set; }
+
+        public byte[] Picture { get; set; }
     }
 }

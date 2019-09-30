@@ -7,7 +7,7 @@ namespace VotingAPI.BusinessObjects
 {
     public class Students
     {
-        public string StudentNumber { get; set; }
+        public int StudentNumber { get; set; }
 
         public string FirstName { get; set; }
 
@@ -26,5 +26,7 @@ namespace VotingAPI.BusinessObjects
         public DateTime DateTimeVoted { get; set; }
 
         public string FullName { get; set; }
+
+        public string Password { get; set; }
     }
 }

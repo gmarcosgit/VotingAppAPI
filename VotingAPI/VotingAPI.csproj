@@ -214,6 +214,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="BusinessObjects\AuditTrailVote.cs" />
     <Compile Include="BusinessObjects\Candidates.cs" />
     <Compile Include="BusinessObjects\Students.cs" />
     <Compile Include="BusinessObjects\VoteData.cs" />
